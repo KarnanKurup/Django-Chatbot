@@ -1,0 +1,39 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div style="position:fixed; bottom:0; right:0" id="cht">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="myDirectChat" class="box box-warning direct-chat direct-chat-warning" style="min-height:70%">
+                <div class="box-header with-border" onclick="">
+                    <h3 class="box-title">Direct Chat</h3>
+                    <div class="box-tools pull-right">
+                    
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body" >
+                    <!-- Conversations are loaded here -->
+                    <div class="direct-chat-messages" id="DIV_CHAT" style="min-height:500px;">
+
+                    </div><!--/.direct-chat-messages-->
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <div class="input-group">
+                        <input type="text" name="msg" placeholder="Type Message ..." class="form-control" id="txtmsg"/>
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-warning btn-flat" onClick="set_chat_msg()" id="Submit2">Send</button>
+                        </span>
+                    </div>
+                </div><!-- /.box-footer-->
+                </div><!--/.direct-chat -->
+            </div>
+        </div>
+    </div>
+ 
+{% endblock %}
+
+{% block scripts %}
+    {% load staticfiles %}
+    <script src="{% static 'app/scripts/botscript.js' %}"></script>
+{% endblock %}
